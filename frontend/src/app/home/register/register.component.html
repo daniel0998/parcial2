@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 login vh-100">
+      <div class="row">
+        <a routerLink=""><i class="fas fa-arrow-left h2 m-1 text-white"></i></a>
+      </div>
+      <div class="container vh-100">
+        <div class="row vh-100">
+          <div class="col-12 loginForm">
+            <form class="text-white">
+              <div class="form-group m-4">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input [(ngModel)]="registerData.name"
+                [ngModelOptions]="{standalone: true}"
+                type="text"
+                  class="form-control"
+                  id="exampleInputName"
+                  aria-describedby="nameHelp"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
+              <div class="form-group m-4">
+                <label for="exampleInputEmail1">Correo</label>
+                <input [(ngModel)]="registerData.email"
+                [ngModelOptions]="{standalone: true}"
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Correo"
+                  required
+                />
+              </div>
+              <div class="form-group m-4">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input [(ngModel)]="registerData.password"
+                [ngModelOptions]="{standalone: true}"
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <div class="form-group m-4">
+                <label for="exampleInputPassword2">Confirmar Contraseña</label>
+                <input [(ngModel)]="registerData.password2"
+                [ngModelOptions]="{standalone: true}"
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword2"
+                  placeholder="Confirmar Contraseña"
+                  required
+                />
+              </div>
+              <button type="submit" (click)="registerUser()" class="btn btn-primary m-4">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 vh-100">
+      <div class="title">
+        <div class="cd-intro-content bouncy">
+          <h1><b>Master</b>Board</h1>
+          <p>Se parte del cambio, se The Masterpiece</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

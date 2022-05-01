@@ -1,0 +1,55 @@
+.headerSpacer{
+    flex: 1 1 auto;
+}
+.navbar{
+    background-color: #1031a7;
+}
+.navbar-brand{
+    font-size: 22px;
+}
+
+.h2-landing{
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+
+.img-landing{
+    background: url("../../../../assets/banner/bannerm.png") no-repeat fixed center;
+    background-size: 100%;
+    background-position-x: -250px;
+    height: 100%;
+    width: 100% ;
+    margin-left: -15px;
+    text-align: center;
+    border: 0px;
+    filter: blur(0.7px);
+}
+
+.nosotros{
+    background-color: #2d71ea;
+    color: #ffffff;
+    text-align: justify;
+}
+.nosotros2{
+    background-color: #1031a7;
+    color: #ffffff;
+}
+.footer{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.derechos{
+    margin-top: -30px;
+    font-size: 12px;
+}
+
+.dropdown-item:hover{
+    background-color: #1031a7;
+    font-size: 18px;
+}
+.gifMaster{
+    height:100%;
+}

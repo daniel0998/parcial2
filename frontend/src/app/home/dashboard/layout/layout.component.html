@@ -1,0 +1,37 @@
+
+    <div class="container shadow">
+      <div class="row">
+        <div class="col-3 navBar vh-100">
+          <ul class="nav flex-column">
+            <li class="nav-item p-3">
+              <img src="../../../../assets/MasterB-08.png" alt="" width="65px" align="center"
+              data-toggle="tooltip" data-placement="right" title="MasterBoard"
+              ><h3><b>Master</b>Board</h3>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="_userService.loggedIn()" routerLink="listProyect" ><i class="fa fa-folder m-1"
+                data-toggle="tooltip" data-placement="right" title="Mis Proyectos"
+                ></i>Mis Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="_userService.loggedIn()" routerLink="listProyectColab" ><i class="fa fa-share-alt m-1"
+                data-toggle="tooltip" data-placement="right" title="Proyectos compartidos"
+                ></i>Proyectos Compartidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " *ngIf="_userService.loggedIn()" routerLink="updateUser" ><i class="fa fa-cog m-1"
+                data-toggle="tooltip" data-placement="right" title="Configuracion"></i>Configuracion de usuario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " *ngIf="_userService.loggedIn()" 
+          mat-button
+          (click)="_userService.logout()"><i class="fa fa-sign-out-alt m-1"
+                data-toggle="tooltip" data-placement="right" title="Salir"></i>Cerrar sesion</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-9">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>

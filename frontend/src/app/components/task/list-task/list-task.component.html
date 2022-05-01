@@ -1,0 +1,146 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of taskData" hideToggle="false" class="clickable-row">
+      <th>{{ task.name }}</th>
+      <td>{{ task.description }}</td>
+      <td>
+        <span class="badge bg-danger" *ngIf="task.taskStatus == 'to-do'">{{
+          task.taskStatus
+        }}</span>
+        <span
+          class="badge bg-warning text-dark"
+          *ngIf="task.taskStatus == 'in-progress'"
+          >{{ task.taskStatus }}</span
+        >
+        <span
+          class="badge bg-success"
+          *ngIf="task.taskStatus == 'done'"
+          >{{ task.taskStatus }}</span
+        >
+      </td>
+      <td>
+        <button
+          class="btn btn-secondary"
+          (click)="getTask(task._id)"
+          data-bs-toggle="offcanvas"
+          [attr.data-bs-target]="'#offcanvasRight-' + task._id"
+        >
+          <i class="fas fa-list-ul"></i>
+        </button>
+        <span class="spacer"></span>
+        <a class="btn btn-danger"(click)="deleteTask(task)" *ngIf="urlButton()"><i class="fa fa-trash-alt"></i></a>
+        <span class="spacer"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  [id]="'offcanvasRight-' + taskDetail._id"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">{{ taskDetail.name }}</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <button
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="updateTask(taskDetail,'to-do')"
+      *ngIf="taskDetail.taskStatus != 'to-do'"
+    >
+      To-do
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      *ngIf="taskDetail.taskStatus == 'to-do'"
+    >
+      To-do
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-warning"
+      (click)="updateTask(taskDetail,'in-progress')"
+      *ngIf="taskDetail.taskStatus != 'in-progress'"
+    >
+      In Progress
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning"
+      *ngIf="taskDetail.taskStatus == 'in-progress'"
+    >
+      In Progress
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="updateTask(taskDetail,'done')"
+      *ngIf="taskDetail.taskStatus != 'done'"
+    >
+      Done
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      *ngIf="taskDetail.taskStatus == 'done'"
+    >
+      Done
+    </button>
+    <br>
+    <b>Descripción:</b>&nbsp;{{ taskDetail.description }}
+    <br>
+    <div *ngIf="taskDetail.imageUrl != ''">
+      <a [href]="taskDetail.imageUrl" target="_blank" download>Descargar Archivo</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<!-- <div
+  class="modal"
+  [id]="'exampleModal-'+ taskDetail._id"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        {{ taskDetail.name }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->

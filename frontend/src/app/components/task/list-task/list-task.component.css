@@ -1,0 +1,7 @@
+.spacer{
+    padding-right: 5%;
+}´
+.my-modal-wrapper {
+    position: absolute;
+    z-index: 1060;
+  }

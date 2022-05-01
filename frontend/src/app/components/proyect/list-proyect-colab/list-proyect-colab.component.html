@@ -1,0 +1,28 @@
+<section class="margin-style">
+<div class="card margin">
+  <div class="card-header card-primary">
+    <h6 class="card-title">Proyectos Compartidos</h6>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-hover" *ngIf="_userService.loggedIn()">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let proyectColab of proyectData"
+          hideToggle="false"
+        >
+        <th><a class="btn shadow m-1" routerLink="listList/{{ proyectColab._id }}">{{ proyectColab.name }}</a></th>
+          <td>{{ proyectColab.description }}</td>
+          <td>{{ proyectColab.registerDate| date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>

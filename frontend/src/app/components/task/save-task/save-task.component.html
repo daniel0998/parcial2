@@ -1,0 +1,70 @@
+<section class="margin-style">
+  <div class="card">
+    <div class="card-header card-primary">
+      <h6 class="card-title">Crear Tareas</h6>
+    </div>
+    <form>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputName"><b>Nombre</b></label>
+          <input
+            [(ngModel)]="registerTaskData.name"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="nameHelp"
+            placeholder="Nombre"
+            required
+          />
+          <br />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputDescription"><b>Descripcion</b></label>
+          <input
+            [(ngModel)]="registerTaskData.description"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+            class="form-control"
+            id="exampleInputDescription"
+            aria-describedby="emailHelp"
+            placeholder="Descripcion"
+            required
+          /><br />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputDescription"><b>Seleccione la lista </b></label>
+          <select
+            [(ngModel)]="registerTaskData.listId"
+            class="form-select"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <option disabled><b>Seleccione la lista</b></option>
+            <option *ngFor="let list of listData" [ngValue]="list._id">
+              {{ list.name }}
+            </option>
+          </select>
+        </div>
+        <br />
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="file"
+            (change)="uploadImg($event)"
+          />
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button
+          type="submit"
+          (click)="saveTask()"
+          class="btn btn-primary"
+          data-dismiss="modal"
+        >
+         Crear
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 vh-100">
+      <div class="row"><a routerLink=""><i class="fas fa-arrow-left h2 m-1"></i></a></div>
+      <div class="title">
+        <div class="cd-intro-content bouncy">
+          <h1><b>Master</b>Board</h1>
+          <p> Se parte del cambio, se The Masterpiece</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 login vh-100">
+      <div class="container vh-100">
+        <div class="row vh-100">
+          <div class="col-12 loginForm">
+            <form class="text-white">
+              <div class="form-group m-4">
+                <label for="exampleInputEmail1">Correo</label>
+                <input
+                  [(ngModel)]="loginData.email"
+                  [ngModelOptions]="{standalone: true}"
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Correo"
+                />
+              </div>
+              <div class="form-group m-4">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input
+                  [(ngModel)]="loginData.password"
+                  [ngModelOptions]="{standalone: true}"
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Contraseña"
+                />
+              </div>
+              <button
+                (click)="login()"
+                type="submit"
+                class="btn btn-primary m-4"
+              >
+                Entrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <img>
+
+</div>

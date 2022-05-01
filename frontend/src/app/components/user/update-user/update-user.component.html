@@ -1,0 +1,19 @@
+<div class="container">
+<form>
+  <h3>Actualizar Usuario</h3>
+    <div class="form-group col-md-6">
+      <label >Email</label>
+      <input  [(ngModel)]="registerData.email" class="form-control" disabled [ngModelOptions]="{standalone: true}"> 
+    </div>
+    <div class="form-group col-md-6"> 
+        <label>Nombre</label>
+        <input  [(ngModel)]="registerData.name" class="form-control" [ngModelOptions]="{standalone: true}" >
+      </div>
+    <div class="form-group col-md-6">
+      <label >Contraseña</label>
+      <input type="password" [(ngModel)]="registerData.password"   class="form-control" [ngModelOptions]="{standalone: true}">
+    </div>
+    <button (click)="updateUser()" class="btn btn-primary">Aceptar</button>
+  </form>
+</div>
+
